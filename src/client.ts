@@ -69,7 +69,7 @@ export class SpigetClient {
     }
     const fetch = options.fetch ?? globalThis.fetch;
     if (typeof fetch !== "function") {
-      throw new TypeError("No fetch implementation found. Use Node.js 20+ or pass `fetch`.");
+      throw new TypeError("No fetch implementation found. Use Node.js 22+ or pass `fetch`.");
     }
 
     this.#ctx = {

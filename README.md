@@ -31,7 +31,7 @@ const latest = await spiget.resources.latestVersion(items[0].id);
 npm install spiget-sdk
 ```
 
-Requires Node.js 20+ (or any runtime with `fetch`, `AbortSignal.any` and `AbortSignal.timeout`).
+Requires Node.js 22+ (or any runtime with `fetch`, `AbortSignal.any` and `AbortSignal.timeout`).
 
 ## Usage
 
