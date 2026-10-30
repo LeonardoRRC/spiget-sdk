@@ -1,0 +1,73 @@
+{
+  "name": "spiget-sdk",
+  "version": "0.0.0",
+  "description": "Modern, fully typed, zero-dependency client for the Spiget API (SpigotMC resources, authors and categories).",
+  "keywords": [
+    "spiget",
+    "spigot",
+    "spigotmc",
+    "minecraft",
+    "plugins",
+    "api",
+    "client",
+    "sdk"
+  ],
+  "license": "MIT",
+  "author": "LeonardoRRC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LeonardoRRC/spiget-sdk.git"
+  },
+  "homepage": "https://leonardorrc.github.io/spiget-sdk/",
+  "bugs": "https://github.com/LeonardoRRC/spiget-sdk/issues",
+  "type": "module",
+  "sideEffects": false,
+  "engines": {
+    "node": ">=20"
+  },
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.cts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    },
+    "./package.json": "./package.json"
+  },
+  "scripts": {
+    "build": "tsdown",
+    "dev": "tsdown --watch",
+    "typecheck": "tsc --noEmit && tsc --noEmit -p tsconfig.test.json",
+    "lint": "biome check .",
+    "format": "biome check --write .",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:live": "vitest run --config vitest.live.config.ts",
+    "check:package": "publint && attw --pack . --profile node16",
+    "docs": "typedoc",
+    "changeset": "changeset",
+    "release": "npm run build && changeset publish"
+  },
+  "devDependencies": {
+    "@arethetypeswrong/cli": "^0.18.5",
+    "@biomejs/biome": "^2.6.4",
+    "@changesets/cli": "^3.0.3",
+    "@types/node": "^26.6.6",
+    "@vitest/coverage-v8": "^5.0.5",
+    "publint": "^0.3.25",
+    "tsdown": "^0.23.4",
+    "typedoc": "^0.28.20",
+    "typescript": "^6.0.3",
+    "vitest": "^5.0.5"
+  }
+}
