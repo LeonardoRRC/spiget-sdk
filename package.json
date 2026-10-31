@@ -1,6 +1,6 @@
 {
   "name": "spiget-sdk",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Modern, fully typed, zero-dependency client for the Spiget API (SpigotMC resources, authors and categories).",
   "keywords": [
     "spiget",
